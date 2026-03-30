@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ponpes Baitussalam - Timer Kembali ke Pesantren</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>⏰ Timer Kembali Ponpes Baitussalam - 1 April 2026</title>
     <style>
         * {
             margin: 0;
@@ -13,118 +12,118 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #1a3c34 0%, #2d5a4a 50%, #1a3c34 100%);
-            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 50%, #1abc9c 100%);
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(255,215,0,0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255,215,0,0.1) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: 1;
+            align-items: center;
+            overflow: hidden;
         }
 
         .container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: 40px;
             text-align: center;
-            max-width: 800px;
-            padding: 20px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            max-width: 550px;
+            width: 90%;
             position: relative;
-            z-index: 2;
+            animation: slideIn 1s ease-out;
+            border: 3px solid rgba(255,255,255,0.3);
         }
 
-        .header {
-            margin-bottom: 40px;
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
         }
 
-        .logo {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            font-weight: 700;
-            background: linear-gradient(45deg, #f4d03f, #f39c12, #f4d03f);
+        .pesantren-logo {
+            font-size: 5rem;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #e74c3c, #f39c12, #27ae60);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-shadow: 0 0 30px rgba(244, 208, 63, 0.5);
-            margin-bottom: 10px;
-            animation: glow 3s ease-in-out infinite alternate;
+            animation: bounce 2s infinite;
         }
 
-        @keyframes glow {
-            from { text-shadow: 0 0 20px rgba(244, 208, 63, 0.5), 0 0 30px rgba(244, 208, 63, 0.3); }
-            to { text-shadow: 0 0 30px rgba(244, 208, 63, 0.8), 0 0 40px rgba(244, 208, 63, 0.5); }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
         }
 
-        .subtitle {
-            font-size: clamp(1.1rem, 3vw, 1.5rem);
-            font-weight: 400;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 20px;
+        .pesantren-identity {
+            background: linear-gradient(135deg, #34495e, #2c3e50);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(52, 73, 94, 0.4);
         }
 
-        .ornament {
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, transparent, #f4d03f, transparent);
-            margin: 0 auto 30px;
-            border-radius: 2px;
-            box-shadow: 0 0 10px rgba(244, 208, 63, 0.5);
+        .pesantren-name {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
-        .timer-section {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            border-radius: 25px;
-            padding: 40px 30px;
-            margin-bottom: 40px;
-            box-shadow: 
-                0 20px 40px rgba(0, 0, 0, 0.3),
-                0 0 0 1px rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
+        .pesantren-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 500;
         }
 
-        .target-time {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 25px;
-            font-weight: 300;
+        h1 {
+            color: #2c3e50;
+            font-size: 1.9rem;
+            margin-bottom: 15px;
+            font-weight: 700;
         }
 
-        .countdown {
+        .deadline {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 15px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+            animation: pulseDeadline 2s infinite;
+        }
+
+        @keyframes pulseDeadline {
+            0%, 100% { box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4); }
+            50% { box-shadow: 0 8px 35px rgba(231, 76, 60, 0.7); }
+        }
+
+        .timer-display {
             display: flex;
             justify-content: center;
-            align-items: center;
-            gap: 20px;
+            gap: 25px;
+            margin: 40px 0;
             flex-wrap: wrap;
         }
 
         .time-unit {
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
-            backdrop-filter: blur(15px);
-            border-radius: 20px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
             padding: 25px 20px;
-            min-width: 100px;
-            box-shadow: 
-                0 15px 35px rgba(0, 0, 0, 0.2),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
+            border-radius: 20px;
+            min-width: 90px;
+            box-shadow: 0 15px 35px rgba(52, 152, 219, 0.4);
+            transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
         }
@@ -136,7 +135,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
             transition: left 0.5s;
         }
 
@@ -144,328 +143,234 @@
             left: 100%;
         }
 
-        .time-number {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(2.5rem, 8vw, 4rem);
-            font-weight: 700;
-            color: #ffffff;
-            text-shadow: 
-                0 0 20px rgba(244, 208, 63, 0.8),
-                0 0 40px rgba(244, 208, 63, 0.4),
-                0 0 60px rgba(244, 208, 63, 0.2);
-            display: block;
-            animation: pulse 2s ease-in-out infinite;
+        .time-unit:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 20px 45px rgba(52, 152, 219, 0.6);
         }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+        .time-number {
+            font-size: 3rem;
+            font-weight: bold;
+            line-height: 1;
+            display: block;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .time-label {
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            opacity: 0.95;
             margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .status {
+            padding: 20px 35px;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 25px 0;
+            transition: all 0.4s ease;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .expired {
-            display: none;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 300px;
+        .status.warning {
+            background: linear-gradient(45deg, #f39c12, #e67e22);
+            color: white;
+            box-shadow: 0 10px 30px rgba(243, 156, 18, 0.4);
         }
 
-        .expired.active {
-            display: flex;
+        .status.expired {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            color: white;
+            animation: shake 0.5s infinite;
+            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.6);
         }
 
-        .expired-text {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(2rem, 6vw, 3.5rem);
-            font-weight: 700;
-            color: #f4d03f;
-            text-shadow: 0 0 30px rgba(244, 208, 63, 0.8);
-            margin-bottom: 20px;
-            animation: bounce 2s infinite;
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
         }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
+        .status.ontime {
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+            color: white;
+            box-shadow: 0 10px 30px rgba(39, 174, 96, 0.4);
         }
 
-        .expired-subtitle {
-            font-size: 1.3rem;
-            color: rgba(255, 255, 255, 0.9);
-            max-width: 500px;
-            line-height: 1.6;
-        }
-
-        .quotes-section {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .quote-container {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(20px);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 
-                0 20px 40px rgba(0, 0, 0, 0.2),
-                0 0 0 1px rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .quote-container::before {
-            content: '“';
-            font-family: 'Cinzel', serif;
-            font-size: 4rem;
-            color: rgba(244, 208, 63, 0.3);
-            position: absolute;
-            top: 10px;
-            left: 20px;
-            font-weight: 700;
-        }
-
-        .quote-container::after {
-            content: '”';
-            font-family: 'Cinzel', serif;
-            font-size: 4rem;
-            color: rgba(244, 208, 63, 0.3);
-            position: absolute;
-            bottom: -20px;
-            right: 20px;
-            font-weight: 700;
-        }
-
-        .quote-text {
-            font-family: 'Poppins', serif;
-            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-            font-style: italic;
-            line-height: 1.6;
-            color: rgba(255, 255, 255, 0.95);
-            margin-bottom: 20px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.8s ease;
-        }
-
-        .quote-text.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .quote-author {
-            font-family: 'Cinzel', serif;
+        .refresh-btn {
+            background: linear-gradient(45deg, #9b59b6, #8e44ad);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 30px;
             font-size: 1.1rem;
-            font-weight: 600;
-            color: #f4d03f;
-            text-shadow: 0 0 10px rgba(244, 208, 63, 0.5);
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.8s ease 0.2s;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            margin-top: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 30px rgba(155, 89, 182, 0.4);
         }
 
-        .quote-author.active {
-            opacity: 1;
-            transform: translateY(0);
+        .refresh-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(155, 89, 182, 0.6);
         }
 
-        @media (max-width: 768px) {
-            .countdown {
-                gap: 15px;
-            }
-            
-            .time-unit {
-                min-width: 80px;
-                padding: 20px 15px;
-            }
-            
-            .time-number {
-                font-size: clamp(2rem, 10vw, 3rem);
-            }
-            
-            .timer-section {
-                padding: 30px 20px;
-                margin-bottom: 30px;
-            }
+        .progress-bar {
+            width: 100%;
+            height: 12px;
+            background: #ecf0f1;
+            border-radius: 6px;
+            overflow: hidden;
+            margin: 25px 0;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #27ae60, #2ecc71, #27ae60);
+            width: 0%;
+            transition: width 0.5s ease;
+            border-radius: 6px;
+            box-shadow: 0 0 20px rgba(39, 174, 96, 0.5);
+            position: relative;
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
         }
 
         @media (max-width: 480px) {
-            .countdown {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .time-unit {
-                min-width: 120px;
-            }
+            .pesantren-logo { font-size: 4rem; }
+            .pesantren-name { font-size: 1.8rem; }
+            .timer-display { gap: 15px; }
+            .time-unit { min-width: 75px; padding: 20px 15px; }
+            .time-number { font-size: 2.2rem; }
+            .container { padding: 30px 25px; margin: 20px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1 class="logo">Ponpes Baitussalam</h1>
-            <p class="subtitle">Persiapan Kembali ke Pesantren</p>
-            <div class="ornament"></div>
+        <!-- IDENTITAS PESANTREN -->
+        <div class="pesantren-identity">
+            <div class="pesantren-logo">🕌</div>
+            <div class="pesantren-name">Ponpes Baitussalam</div>
+            <div class="pesantren-subtitle">Pondok Pesantren Baitussalam</div>
         </div>
 
-        <div class="timer-section" id="timerSection">
-            <div class="target-time" id="targetTime">
-                Target: Rabu, 1 April 2026 pukul 17:00 WIB
-            </div>
-            <div class="countdown" id="countdown">
-                <div class="time-unit">
-                    <span class="time-number" id="days">00</span>
-                    <span class="time-label">Hari</span>
-                </div>
-                <div class="time-unit">
-                    <span class="time-number" id="hours">00</span>
-                    <span class="time-label">Jam</span>
-                </div>
-                <div class="time-unit">
-                    <span class="time-number" id="minutes">00</span>
-                    <span class="time-label">Menit</span>
-                </div>
-                <div class="time-unit">
-                    <span class="time-number" id="seconds">00</span>
-                    <span class="time-label">Detik</span>
-                </div>
-            </div>
+        <h1>⏰ Timer Kembali ke Pesantren</h1>
+        
+        <div class="deadline" id="deadlineText">
+            📅 Rabu, 1 April 2026 - Jam 17:00 WIB
         </div>
 
-        <div class="expired" id="expired">
-            <div class="expired-text">Waktu Telah Habis</div>
-            <div class="expired-subtitle">
-                Saatnya Kembali ke Pesantren<br>
-                <span style="color: #f4d03f; font-weight: 600;">Ponpes Baitussalam Menanti!</span>
+        <div class="timer-display">
+            <div class="time-unit">
+                <span class="time-number" id="days">000</span>
+                <span class="time-label">Hari</span>
+            </div>
+            <div class="time-unit">
+                <span class="time-number" id="hours">00</span>
+                <span class="time-label">Jam</span>
+            </div>
+            <div class="time-unit">
+                <span class="time-number" id="minutes">00</span>
+                <span class="time-label">Menit</span>
+            </div>
+            <div class="time-unit">
+                <span class="time-number" id="seconds">00</span>
+                <span class="time-label">Detik</span>
             </div>
         </div>
 
-        <div class="quotes-section">
-            <div class="quote-container">
-                <div class="quote-text active" data-quote="0">
-                    "Disiplin adalah jembatan antara tujuan dan pencapaian."
-                </div>
-                <div class="quote-author active" data-quote="0">- Jim Rohn</div>
-            </div>
+        <div id="status" class="status ontime">🚀 Persiapan Kembali ke Ponpes Baitussalam!</div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
         </div>
+
+        <button class="refresh-btn" onclick="location.reload()">
+            🔄 Refresh Timer
+        </button>
     </div>
 
     <script>
-        // Target date: Rabu, 1 April 2026 pukul 17:00 waktu lokal
-        const targetDate = new Date('2026-04-01T17:00:00').getTime();
-        
-        let timerInterval;
-        let quoteInterval;
-        let currentQuoteIndex = 0;
-        
-        const quotes = [
-            {
-                text: "Disiplin adalah jembatan antara tujuan dan pencapaian.",
-                author: "Jim Rohn"
-            },
-            {
-                text: "Kebiasaan yang baik adalah tangga menuju kebaikan yang lebih besar.",
-                author: "Imam Al-Ghazali"
-            },
-            {
-                text: "Perubahan dimulai dari disiplin terhadap hal-hal kecil.",
-                author: "Ibnu Qayyim Al-Jauziyah"
-            },
-            {
-                text: "Pendidikan adalah senjata paling ampuh yang bisa kamu gunakan untuk mengubah dunia.",
-                author: "Nelson Mandela"
-            },
-            {
-                text: "Orang yang sukses adalah yang mampu mengendalikan diri dengan disiplin.",
-                author: "Aristoteles"
-            },
-            {
-                text: "Kebiasaan menentukan nasib seseorang lebih dari bakat.",
-                author: "Imam Syafi'i"
-            }
-        ];
-
         function updateTimer() {
-            const now = new Date().getTime();
-            const distance = targetDate - now;
+            // TARGET: Rabu, 1 April 2026 jam 17:00 WIB
+            const target = new Date('2026-04-01T17:00:00+07:00');
+            const now = new Date();
+            
+            const timeLeft = target - now;
 
-            if (distance > 0) {
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            if (timeLeft <= 0) {
+                document.getElementById('days').textContent = '000';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                document.getElementById('status').textContent = '🏆 Waktu Kembali Telah Tiba! Selamat Datang di Ponpes Baitussalam!';
+                document.getElementById('status').className = 'status expired';
+                document.getElementById('progressFill').style.width = '100%';
+                document.getElementById('deadlineText').textContent = '🎉 1 April 2026 - Sudah Waktunya!';
+                return;
+            }
 
-                document.getElementById('days').textContent = days.toString().padStart(2, '0');
-                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            // Hitung waktu tersisa
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            // Update display
+            document.getElementById('days').textContent = days.toString().padStart(3, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+
+            // Progress bar (0-100%)
+            const totalMs = target - new Date('2026-03-01T17:00:00+07:00'); // 1 bulan sebelum
+            const progress = Math.min(100, ((totalMs - timeLeft) / totalMs) * 100);
+            document.getElementById('progressFill').style.width = progress + '%';
+
+            // Status berdasarkan waktu tersisa
+            if (days <= 7) {
+                document.getElementById('status').className = 'status warning';
+                document.getElementById('status').textContent = '⚠️ Minggu Terakhir! Segera Siapkan Diri!';
+            } else if (days <= 30) {
+                document.getElementById('status').className = 'status warning';
+                document.getElementById('status').textContent = '🚨 Bulan Terakhir Persiapan!';
             } else {
-                clearInterval(timerInterval);
-                showExpired();
+                document.getElementById('status').className = 'status ontime';
+                document.getElementById('status').textContent = '🚀 Persiapan Kembali ke Ponpes Baitussalam!';
             }
         }
 
-        function showExpired() {
-            document.getElementById('timerSection').style.display = 'none';
-            document.getElementById('expired').classList.add('active');
+        // Update setiap detik
+        setInterval(updateTimer, 1000);
+        updateTimer(); // Jalankan sekali
+
+        // Notifikasi browser (opsional)
+        if (Notification.permission === 'default') {
+            Notification.requestPermission();
         }
-
-        function cycleQuotes() {
-            const quoteElements = document.querySelectorAll('.quote-text, .quote-author');
-            
-            // Hide current quote
-            quoteElements.forEach(el => {
-                if (el.classList.contains('active')) {
-                    el.classList.remove('active');
-                }
-            });
-
-            // Move to next quote
-            currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
-            
-            // Show new quote after delay
-            setTimeout(() => {
-                document.querySelector('.quote-text[data-quote]').textContent = quotes[currentQuoteIndex].text;
-                document.querySelector('.quote-author[data-quote]').textContent = quotes[currentQuoteIndex].author;
-                
-                document.querySelectorAll('.quote-text, .quote-author')[currentQuoteIndex * 2].classList.add('active');
-                document.querySelectorAll('.quote-text, .quote-author')[currentQuoteIndex * 2 + 1].classList.add('active');
-            }, 400);
-        }
-
-        // Initialize
-        document.addEventListener('DOMContentLoaded', function() {
-            // Set initial data-quote attributes
-            document.querySelector('.quote-text').setAttribute('data-quote', '0');
-            document.querySelector('.quote-author').setAttribute('data-quote', '0');
-            
-            // Start timer
-            updateTimer();
-            timerInterval = setInterval(updateTimer, 1000);
-            
-            // Start quote cycling (random interval 5-8 seconds)
-            quoteInterval = setInterval(cycleQuotes, Math.random() * 3000 + 5000);
-        });
-
-        // Pause quotes when expired
-        document.addEventListener('visibilitychange', function() {
-            if (document.hidden) {
-                clearInterval(quoteInterval);
-            } else if (!document.getElementById('expired').classList.contains('active')) {
-                quoteInterval = setInterval(cycleQuotes, Math.random() * 3000 + 5000);
-            }
-        });
     </script>
 </body>
 </html>
